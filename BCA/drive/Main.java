@@ -32,7 +32,7 @@ public class Main {
                 stud.displaystudent(con);
                 break;
             case 3:
-                stud.updatestudentname(con, sc);
+                stud.updatestudentDetails(con, sc);
                 break;
             case 4:
                 stud.removeStudent(con, sc);
