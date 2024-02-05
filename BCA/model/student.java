@@ -44,18 +44,26 @@ public class student {
 		}
 		
 	}
-	public void updatestudentname(Connection con, Scanner sc) throws SQLException {
-		Statement st = con.createStatement();
-		System.out.println("Enter Student Roll: ");
-		int Roll = sc.nextInt();
-		System.out.println("Enter Student New Name: ");
-		String Sname = sc.next();
-		
-		String query = String.format("update student2 set Sname='%s' where Roll = %d", Sname, Roll);
-		int rowsAffected = st.executeUpdate(query);
-		System.out.println(rowsAffected+" recored updated!!!");
-		
-	}
+	public void updatestudentDetails(Connection con, Scanner sc) throws SQLException {
+        Statement st = con.createStatement();
+
+        System.out.println("Enter Student Roll: ");
+        int roll = sc.nextInt();
+
+        System.out.println("Enter Student New Name: ");
+        String newName = sc.next();
+
+        System.out.println("Enter Student New Age: ");
+        String newAge = sc.next();
+
+        
+
+        String query = String.format("UPDATE student2 SET Sname='%s', Age='%s' WHERE Roll = %d", newName, newAge, roll);
+
+        int rowsAffected = st.executeUpdate(query);
+
+        System.out.println(rowsAffected + " records updated!!!");
+    }
 	
 	public void removeStudent(Connection con, Scanner sc) throws SQLException {
 		Statement st = con.createStatement();
